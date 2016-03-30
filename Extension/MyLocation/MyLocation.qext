@@ -1,0 +1,16 @@
+{
+	"name": "MyLocation",
+	"description": "Find your location and select the coordinates of what is near to you",
+	"icon": "extension",
+	"preview": "preview.png",
+	"type": "visualization",
+	"version": "1.0.0",
+	"author": "Renato Vieira - rvr@qlik.com",
+	"homepage": "",
+	"keywords": "qlik-sense, visualization, gps, location",
+	"license": "The MIT License (MIT)",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=1.0.x"
+	}
+}
