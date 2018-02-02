@@ -1,7 +1,8 @@
 # MyLocationFinder-QS
 Qlik Sense extension that uses your location and selects the coordinates of what is near to you based on a configurable distance.
 
-Tested with Qlik Sense 2.1.1.
+Tested with Qlik Sense November 2017.
+Make sure you are using the extension version 1.1.1. Previous versions were forcing longitudes data to be defined on a field named "Longitude". Thanks to [Patric Nordström](https://github.com/patricnordstrom) to note that something odd was happening.
 
 Features included are:
   * Uses your browser's geolocation feature to find your current location (for this you must allow your browser to use this feature. More info - http://www.w3schools.com/html/html5_geolocation.asp)
