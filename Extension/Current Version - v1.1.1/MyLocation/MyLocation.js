@@ -1,5 +1,5 @@
 /*globals define*/
-define( ['./js/qsocks.bundle','js/qlik','css!./styles/style.css'], function ( qsocks, qlik ) {
+define( ['./js/qsocks.bundle','qlik','css!./styles/style.css'], function ( qsocks, qlik ) {
 	'use strict';
 	return {
 		definition: {
@@ -27,6 +27,18 @@ define( ['./js/qsocks.bundle','js/qlik','css!./styles/style.css'], function ( qs
 								  type: "string",
 								  expression: ""
 								}//"properties.myLocConfigs.lng_field"
+							}
+						},
+						myloc_point:{
+							type: "items",
+							label: "Variable to store my position",
+							items: {
+								myloc_point:{
+								  ref: "properties.myLocConfigs.myloc_point",
+								  label: "Variable for my position",
+								  type: "string",
+								  expression: ""
+								}//properties.myLocConfigs.myloc_point
 							}
 						},
 						distance:{
@@ -68,6 +80,9 @@ define( ['./js/qsocks.bundle','js/qlik','css!./styles/style.css'], function ( qs
 				  navigator.geolocation.getCurrentPosition(function(position) {
 					var coordinatesBounds = searchableCoordinates(position.coords.latitude, position.coords.longitude);
 					searchValuesApp(coordinatesBounds);
+					var pos_coords = "[" + position.coords.longitude + "," + position.coords.latitude + "]";
+					qlik.currApp(this).variable.setStringValue(myLocConfigs.myloc_point,pos_coords);
+					
 				  });
 				} else {
 				  $element.html("You have no geonavigation available!");
